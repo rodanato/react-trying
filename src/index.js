@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+import store from './store';
+import StarshipsLibrary from './components/starships-library';
+
+
+const container = document.getElementById('root');
+
+render(
+  <Provider store={store}>
+    <StarshipsLibrary />
+  </Provider>,
+  container
 );

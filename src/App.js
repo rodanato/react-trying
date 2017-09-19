@@ -34,8 +34,8 @@ class App extends Component {
       alert('Hello, ' + this.name);
   }
 
-  saySpeed(value) {
-    alert('Speed: ' + this.speed + value);
+  tellSpeed(value) {
+    alert(this.name + ' speed: ' + this.speed + value);
   }
 
   setStarshipsList() {
@@ -43,13 +43,13 @@ class App extends Component {
       return (
         <Starship data={starship} 
           key={i}
-          onBlur={this.saySpeed}
+          onBlur={this.tellSpeed}
           onClick={this.alertSize.bind(this)} />    
       );
     });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.loadStarships();
   }
 
